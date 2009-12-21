@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">You do not have anything to click yet !</string>
+    <string name="app_name">Never Heard That</string>
+<string name="menu_search_device">What should I listen to ?</string><string name="menu_search_textfile">Search textfile</string>
+<string name="menu_what_do_i_own">Cohesiveness ?</string>
+</resources>
