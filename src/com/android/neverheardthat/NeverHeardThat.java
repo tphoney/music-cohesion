@@ -175,7 +175,6 @@ public class NeverHeardThat extends ListActivity {
 
 	public void debugTest() {
 		myCollection.addArtist("Radiohead", "RADIOHEAD", "crap1", true);
-		myCollection.addArtist("Gene", "GENE", "crap2", true);
 		myCollection.addArtist("Pulp", "PULP", "crap3", true);
 		myCollection.addArtist("James", "JAMES", "crap4", true);
 		myCollection.addArtist("Daft Punk", "DAFT PUNK", "crap4", true);
