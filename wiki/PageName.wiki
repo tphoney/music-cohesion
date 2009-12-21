@@ -1,0 +1,9 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+you have to setup svn / eclipse / and the android sdk.
+
+
+= Details =
+
+  * REad this http://blog.msbbc.co.uk/2007/06/using-googles-free-svn-repository-with.html
