@@ -11,6 +11,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.BaseColumns;
+import android.provider.MediaStore.MediaColumns;
+import android.provider.MediaStore.Audio.AudioColumns;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
@@ -55,7 +58,7 @@ public class NeverHeardThat extends ListActivity {
 			pd.setMessage("Searching Device");
 			pd.setIndeterminate(false);
 			pd.show();
-			Thread thread = new Thread(new munkey());
+			Thread thread = new Thread(new Cohesiveness());
 			thread.start();
 			showOwned = false;
 			return true;
@@ -112,21 +115,8 @@ public class NeverHeardThat extends ListActivity {
 		}
 	}
 
-	private class munkey implements Runnable {
-		public void run() {
-			searchDeviceForArtists();
-			updateProgress.sendMessage(Message.obtain(updateProgress,
-					myCollection.sizeOfCollection(), "Searching for Artists"));
-			findArtistInfo2();
-			updateProgress
-					.sendMessage(Message.obtain(updateProgress, myCollection
-							.sizeOfCollection(), "Getting Recommendations"));
-			findRecommendedArtists();
-			updateProgress.sendMessage(Message.obtain(updateProgress, 0, ""));
-		}
-	}
-
 	private Handler updateProgress = new Handler() {
+		@Override
 		public void handleMessage(Message msg) {
 			switch (msg.what) {
 			case 0:
@@ -152,11 +142,11 @@ public class NeverHeardThat extends ListActivity {
 		// search on the internal device and external media
 		Uri mUri = android.provider.MediaStore.Audio.Media.EXTERNAL_CONTENT_URI;
 		String[] mProjection = new String[] {
-				android.provider.MediaStore.Audio.Media._ID,
-				android.provider.MediaStore.Audio.Media.TITLE,
-				android.provider.MediaStore.Audio.Media.DATA,
-				android.provider.MediaStore.Audio.Media.ARTIST,
-				android.provider.MediaStore.Audio.Media.ALBUM, };
+				BaseColumns._ID,
+				MediaColumns.TITLE,
+				MediaColumns.DATA,
+				AudioColumns.ARTIST,
+				AudioColumns.ALBUM, };
 		Cursor mCursor = managedQuery(mUri, mProjection, // Which columns to
 				// return.
 				null, // WHERE clause--we won't specify.

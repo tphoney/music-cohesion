@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+<LinearLayout android:id="@+id/LinearLayout01" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"><TextView android:id="@+id/TextView01" android:layout_height="wrap_content" android:text="Music Cohesion" android:layout_width="fill_parent"></TextView><ImageButton android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/FindSimilarArtistsButton"></ImageButton>
+<ImageButton android:layout_width="fill_parent" android:layout_height="wrap_content" android:id="@+id/MusicCohesionButton" android:onClick="@string/menu_search_device"></ImageButton>
+
+</LinearLayout>
