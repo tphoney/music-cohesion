@@ -1,0 +1,13 @@
+# Introduction #
+you have to setup svn / eclipse / and the android sdk.
+
+
+# SVN #
+Read this http://blog.msbbc.co.uk/2007/06/using-googles-free-svn-repository-with.html
+
+# Eclipse #
+Download the ~Eclipse IDE for Java Developers (92 MB)~
+
+# Android sdk #
+
+# Android plugin for eclipse #
